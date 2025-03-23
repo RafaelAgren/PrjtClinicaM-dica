@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Healenth</title>
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.2.0/mdb.min.css" rel="stylesheet" />
+
+        <style>
+            .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.input-group-text, .select-group, input.form-control, select.form-control, textarea.form-control {
+    background: #eff0f2;
+}
+.align-items-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.hid1 {
+    display: none;
+}
+
+
+        </style>
+    </head>
+
+    <body>
+        <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-8 col-xl-6">
+                  <div class="card rounded-3">
+                    <img src="https://portalhospitaisbrasil.com.br/wp-content/uploads/2020/12/hospital.jpg"
+                      class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                      alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Solicitação de cadastro</h3>
+          
+                      <form class="px-md-2">
+          
+                        <div>
+                            <select class="form-control" onchange="showDiv()">
+                                <option autocomplete="off" required="">Selecione o tipo</option>
+                                <option value="2">Paciente</option>
+                                <option value="3">Médico</option>
+                              </select>
+                            
+                              <div class="hid1">
+<br>
+                        <label>* Nome:</label>
+                        <input type="name" name="nome" value="" id="nome" class="form-control" maxlength="55" required="required" inputmode="text">
+<br>
+                        <label id="labelTipo">* CPF/CNPJ:</label>
+                        <input type="text" name="username" value="" id="cnpjadd" class="form-control" required="" inputmode="text">
+<br>
+                        <label>* E-mail:</label>
+                        <input type="email" name="email" value="" id="email" class="form-control" maxlength="100" required="" data-validate-type="email" placeholder="">
+<br>
+                        <label id="passw">* Senha:</label>
+                        <input type="password" maxlength="20" class="form-control" name="password" id="newpassword" placeholder="Senha" required="required" value="" autocomplete="off">
+
+                        <img onclick="togglePassword()" id="togglepassw"
+src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDUlEQVQ4jd2SvW3DMBBGbwQVKlyo4BGC4FKFS4+TATKCNxAggkeoSpHSRQbwAB7AA7hQoUKFLH6E2qQQHfgHdpo0yQHX8T3exyPR/ytlQ8kOhgV7FvSx9+xglA3lM3DBgh0LPn/onbJhcQ0bv2SHlgVgQa/suFHVkCg7bm5gzB2OyvjlDFdDcoa19etZMN8Qp7oUDPEM2KFV1ZAQO2zPMBERO7Ra4JQNpRa4K4FDS0R0IdneCbQLb4/zh/c7QdH4NL40tPXrovFpjHQr6PJ6yr5hQV80PiUiIm1OKxZ0LICS8TWvpyyOf2DBQQtcXk8Zi3+JcKfNafVsjZ0WfGgJlZZQxZjdwzX+ykf6u/UF0Fwo5Apfcq8AAAAASUVORK5CYII=">
+
+
+                            </div>
+
+                        </div>
+<br>
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1">Enviar</button>
+          
+                      </form>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+    </body>
+    
+    <script> 
+        function togglePassword() {
+          let field = document.getElementById('newpassword');
+      
+          if (field.type === 'password') {
+            field.type = 'text';
+          } else {
+            field.type = 'password';
+          }
+        }
+
+        function showDiv() {
+      var select = document.querySelector('select');
+      var div = document.querySelector('.hid1');
+      
+      // Verificar se uma opção com valor foi selecionada
+      if (select.value !== "") {
+        div.style.display = 'block'; // Exibe a div
+      } else {
+        div.style.display = 'none'; // Oculta a div
+      }
+    }
+</script>
+
+</html>
